@@ -1,14 +1,25 @@
 import java.text.SimpleDateFormat;
 import java.util.Comparator;
 import java.util.Date;
+
+/**
+ *Comparator class to compare Food Products by their expiration date.
+ * @author Shawn
+ */
 public class ComparatorByDate implements Comparator<FoodProduct> {
 
+    /**
+     * Compares 2 food products by their expiration date
+     * @param a The first food product
+     * @param b the second food product
+     * @return returns either a -1,0,1 for the comparison
+     */
     public int compare(FoodProduct a, FoodProduct b) {
         String aString = a.getExpDate();
         String bString = b.getExpDate();
         try {
-            Date dateA = new SimpleDateFormat("ddMMyy").parse(aString);
-            Date dateB = new SimpleDateFormat("ddMMyy").parse(bString);
+            Date dateA = new SimpleDateFormat("MMddyy").parse(aString);
+            Date dateB = new SimpleDateFormat("MMddyy").parse(bString);
             return dateA.compareTo(dateB);
         }catch(java.text.ParseException e){
         e.printStackTrace();
@@ -16,32 +27,3 @@ public class ComparatorByDate implements Comparator<FoodProduct> {
         return 0;
     }
 }
-
-
-
-
-
-        /* if (Integer.parseInt(aString.substring(4,5)) - Integer.parseInt(bString.substring(4,5)) < 0){
-            return 1;
-        }
-        if (Integer.parseInt(aString.substring(4,5)) - Integer.parseInt(bString.substring(4,5)) > 0){
-            return -1;
-        }
-        if (Integer.parseInt(aString.substring(0,1)) - Integer.parseInt(bString.substring(0,1)) < 0){
-            return 1;
-        }
-        if (Integer.parseInt(aString.substring(0,1)) - Integer.parseInt(bString.substring(0,1)) > 0){
-            return -1;
-        }
-        if (Integer.parseInt(aString.substring(2,3)) - Integer.parseInt(bString.substring(2,3)) < 0){
-            return 1;
-        }
-        if (Integer.parseInt(aString.substring(2,3)) - Integer.parseInt(bString.substring(2,3)) > 0){
-            return -1;
-        }
-
-        else return 0;
-
-    }
-}
-*/

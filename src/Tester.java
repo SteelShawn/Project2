@@ -5,12 +5,12 @@ public class Tester {
         //ArrayList<FoodProduct> FPlist = new ArrayList<>();
         //Scanner k = new Scanner(System.in);
         Inventory inventory = new Inventory();
-       // Menu menu = new Menu();
-        //menu.menuInteraction();
-        inventory.uploadInformation("Inventory.txt");
-        inventory.printByName();
-        inventory.decrement("Apples");
-        inventory.printByName();
+        Menu menu = new Menu();
+        menu.menuInteraction();
+        //inventory.uploadInformation("Inventory.txt");
+        //inventory.printByName();
+        //inventory.decrement("0011112000");
+        //inventory.printByName();
         //inventory.printByExpDate();
 
 

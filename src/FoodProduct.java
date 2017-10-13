@@ -1,3 +1,7 @@
+/**
+ * Class to hold information about a single Food Product
+ * @author Shawn
+ */
 public class FoodProduct extends Product {
     int upc;
     String expDate;
@@ -42,8 +46,21 @@ public class FoodProduct extends Product {
         return expDate;
     }
 
+
+    /**
+     * Method to set a UPC to have leading zeros to keep the size at 10
+     * @param upc The UPC to be formatted
+     * @return The formatted UPC as a string
+     */
     public String leadingZeroUPC(int upc){
         return String.format("%010d", upc);
     }
 
+    @Override
+    /**
+     * toString method to print out the Food Product
+     */
+    public String toString() {
+        return name + " " + leadingZeroUPC(upc) + " " + quantity + " " + price + " " + expDate;
+    }
 }

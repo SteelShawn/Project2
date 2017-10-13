@@ -1,12 +1,20 @@
 import java.util.Scanner;
 
+/**
+ * Class to manage the interaction between the program and the user
+ * @author Shawn
+ */
 public class Menu {
     Inventory inventory;
     Scanner k = new Scanner(System.in);
 
+    /**
+     * Default constructor for the menu class
+     * Creates a new inventory and uploads from the inventory.txt file
+     */
     public Menu(){
         inventory = new Inventory();
-        inventory.uploadInformation("Inventory.txt");
+        inventory.uploadInformation("inventory.txt");
     }
 
     /**
@@ -36,7 +44,9 @@ public class Menu {
      */
     private void processAction(String action){
         if (action.equals("U")){
-            inventory.uploadInformation("delivery.txt");
+            System.out.println("Please enter the Delivery file:");
+            inventory.uploadInformation(getInput());
+            System.out.println();
             menuInteraction();
         }
         if (action.equals("P")){
@@ -48,15 +58,21 @@ public class Menu {
             menuInteraction();
         }
         if (action.equals("S")){
-            inventory.searchFor(getInput());
+            System.out.println("Please enter the name of the product you would like to search for:");
+            inventory.searchByName(getInput());
+            System.out.println();
             menuInteraction();
         }
         if (action.equals("D")){
+            System.out.println("Please enter the UPC:");
             inventory.decrement(getInput());
+            System.out.println();
             menuInteraction();
         }
         if (action.equals("R")) {
+            System.out.println("Please enter the name of Product to be discontinued:");
             inventory.remove(getInput());
+            System.out.println();
             menuInteraction();
         }
         if (action.equals("Q")) {
@@ -65,6 +81,9 @@ public class Menu {
             }
         }
 
+    /**
+     * Method to quit the program
+     */
     private void quit() {
         System.exit(0);
     }
