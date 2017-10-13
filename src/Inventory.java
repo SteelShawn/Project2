@@ -137,7 +137,7 @@ public class Inventory {
         try{
             io.writeInventoryToFile(inven);
         } catch (java.io.FileNotFoundException e) {
-            System.out.println("file not found");
+            System.out.println("File not found");
             e.printStackTrace();
         } catch (java.io.UnsupportedEncodingException e){
             System.out.println("Error writing to file");

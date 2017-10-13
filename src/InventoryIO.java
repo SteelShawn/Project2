@@ -87,6 +87,7 @@ public class InventoryIO {
                     }
                 }
             }
+            System.out.println("File successfully Uploaded");
         return returnList;
     }
 

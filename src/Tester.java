@@ -4,7 +4,7 @@ public class Tester {
     public static void main(String[] args){
         //ArrayList<FoodProduct> FPlist = new ArrayList<>();
         //Scanner k = new Scanner(System.in);
-        Inventory inventory = new Inventory();
+        //Inventory inventory = new Inventory();
         Menu menu = new Menu();
         menu.menuInteraction();
         //inventory.uploadInformation("Inventory.txt");
